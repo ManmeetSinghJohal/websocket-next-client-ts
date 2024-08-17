@@ -29,12 +29,12 @@ const ServerCard: React.FC<ServerCardProps> = ({
   const { server } = stats;
 
   return (
-    <div className="bg-white-200 p-4 sm:p-6 rounded-[10px] border">
+    <div className="bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 p-4 sm:p-6 rounded-[10px] border">
       <div className="flex justify-center mb-6">
         <h3 className="font-bold sm:text-2xl">{title}</h3>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="flex-grow rounded-md border p-4 bg-white-100">
+        <div className="flex-grow rounded-md border p-4 bg-slate-200">
           <p>
             <strong>Region:</strong> {region}
           </p>
@@ -51,7 +51,7 @@ const ServerCard: React.FC<ServerCardProps> = ({
             <strong>Server Issue:</strong> {serverIssue || "None"}
           </p>
         </div>
-        <div className="flex-grow rounded-md border p-4 bg-white-100">
+        <div className="flex-grow rounded-md border p-4 bg-slate-200">
           <div className="flex justify-center mb-3">
             <h4 className="font-semibold sm:text-xl">Services</h4>
           </div>
@@ -65,7 +65,7 @@ const ServerCard: React.FC<ServerCardProps> = ({
             </li>
           </ul>
         </div>
-        <div className="col-span-1 sm:col-span-2 flex-grow rounded-md border p-4 bg-white-100">
+        <div className="col-span-1 sm:col-span-2 flex-grow rounded-md border p-4 bg-slate-200">
           <div className="flex justify-center mb-3">
             <h4 className="font-semibold sm:text-xl">Stats</h4>
           </div>
