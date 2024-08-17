@@ -17,12 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="mx-auto max-w-[1440px] pb-12">
-          <div className="text-center pt-8 pb-10">
-            <h1 className="text-2xl sm:text-4xl">Server Status Monitor</h1>
+        <main>
+          <div className="text-center pt-8 pb-10 bg-white-300">
+            <h1 className="text-2xl sm:text-4xl ">Server Status Monitor</h1>
           </div>
-          <div className="">{children}</div>
-        </div>
+          {children}
+        </main>
       </body>
     </html>
   );
