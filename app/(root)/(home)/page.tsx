@@ -20,8 +20,8 @@ export default function Home() {
   }, [lastJsonMessage]);
 
   return (
-    <div>
-      <div className=" h-screen">
+    <div className="bg-white-300">
+      <div className="mx-auto max-w-[1440px] py-12">
         {loading ? (
           <div className="flex justify-center items-center h-screen">
             <RingLoader color="#d80ee7" loading={loading} size={150} />

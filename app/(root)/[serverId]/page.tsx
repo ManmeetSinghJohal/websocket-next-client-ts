@@ -25,7 +25,7 @@ const ServerDetails = ({ params }: { params: { serverId: string } }) => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-screen bg-white-300">
         <RingLoader color="#d80ee7" loading={loading} size={150} />
       </div>
     );
@@ -36,16 +36,20 @@ const ServerDetails = ({ params }: { params: { serverId: string } }) => {
   }
 
   return (
-    <ServerDetailsCard
-      title={`${(serverData.data.region || "").toUpperCase()}`}
-      region={serverData.data.region}
-      status={serverData.data.status}
-      roles={serverData.data.roles}
-      strict={serverData.data.strict}
-      serverIssue={serverData.data.server_issue}
-      services={serverData.data.results.services}
-      stats={serverData.data.results.stats}
-    />
+    <div className="bg-white-300 ">
+      <div className="mx-auto max-w-[1440px] py-12">
+        <ServerDetailsCard
+          title={`${(serverData.data.region || "").toUpperCase()}`}
+          region={serverData.data.region}
+          status={serverData.data.status}
+          roles={serverData.data.roles}
+          strict={serverData.data.strict}
+          serverIssue={serverData.data.server_issue}
+          services={serverData.data.results.services}
+          stats={serverData.data.results.stats}
+        />
+      </div>
+    </div>
   );
 };
 
