@@ -3,18 +3,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 // Import the defined types
-import { Services, Stats } from "@/types/types";
+import { ServerCardProps } from "@/types/types";
 
-type ServerCardProps = {
-  title: string;
-  region: string;
-  status: string;
-  roles: string[];
-  strict: boolean;
-  serverIssue?: string | null;
-  services: Services;
-  stats: Stats;
-};
 
 const ServerCard: React.FC<ServerCardProps> = ({
   title,
@@ -35,6 +25,9 @@ const ServerCard: React.FC<ServerCardProps> = ({
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="flex-grow rounded-md border p-4 bg-slate-200">
+          <div className="flex justify-center mb-3">
+            <h4 className="font-semibold sm:text-xl text-lg">Server</h4>
+          </div>
           <p>
             <strong>Region:</strong> {region}
           </p>
@@ -53,7 +46,7 @@ const ServerCard: React.FC<ServerCardProps> = ({
         </div>
         <div className="flex-grow rounded-md border p-4 bg-slate-200">
           <div className="flex justify-center mb-3">
-            <h4 className="font-semibold sm:text-xl">Services</h4>
+            <h4 className="font-semibold sm:text-xl text-lg">Services</h4>
           </div>
           <ul>
             <li>
@@ -67,7 +60,7 @@ const ServerCard: React.FC<ServerCardProps> = ({
         </div>
         <div className="col-span-1 sm:col-span-2 flex-grow rounded-md border p-4 bg-slate-200">
           <div className="flex justify-center mb-3">
-            <h4 className="font-semibold sm:text-xl">Stats</h4>
+            <h4 className="font-semibold sm:text-xl text-lg">Stats</h4>
           </div>
           <ul>
             <li>
