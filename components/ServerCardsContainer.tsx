@@ -1,9 +1,7 @@
 import React from "react";
 import ServerCard from "./ServerCard";
 
-type ServerCardsContainerProps = {
-  data: EndpointData[];
-};
+import { ServerCardsContainerProps } from "@/types/types";
 
 const ServerCardsContainer: React.FC<ServerCardsContainerProps> = ({
   data,
