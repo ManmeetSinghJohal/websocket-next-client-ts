@@ -26,12 +26,19 @@ module.exports = {
         },
         white: {
           100: "#FFFFFF",
+          200: "#F6F7F9",
           300: "#ADB3CC",
           500: "#55597D",
         },
         purle: {
           500: "#9542FF",
           900: "#9542FF1A",
+        },
+        peach:{
+          400: "#F4B393"
+        },
+        violet: {
+          400: "#494368",
         },
         green: {
           400: "#68D1BF",
