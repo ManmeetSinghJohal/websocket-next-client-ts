@@ -3,18 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 // Import the defined types
-import { Services, Stats } from "@/types/types";
-
-type ServerDetailsCardProps = {
-  title: string;
-  region: string;
-  status: string;
-  roles: string[];
-  strict: boolean;
-  serverIssue?: string | null;
-  services: Services;
-  stats: Stats;
-};
+import { ServerDetailsCardProps } from "@/types/types";
 
 const ServerDetailsCard: React.FC<ServerDetailsCardProps> = ({
   title,
@@ -29,12 +18,17 @@ const ServerDetailsCard: React.FC<ServerDetailsCardProps> = ({
   const { server } = stats;
 
   return (
-    <div className="bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 p-4 sm:p-6 rounded-[10px] border">
+    <div className="bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 p-4 sm:p-6 rounded-[10px] border mx-4">
       <div className="flex justify-center mb-6">
         <h3 className="font-bold sm:text-3xl">{title}</h3>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="col-span-1 flex-grow rounded-md border p-4 bg-slate-200">
+          <div className="flex justify-center mb-3">
+            <h4 className="font-semibold sm:text-xl lg:text-2xl text-lg">
+              Server
+            </h4>
+          </div>
           <p>
             <strong>Region:</strong> {region}
           </p>
@@ -53,7 +47,9 @@ const ServerDetailsCard: React.FC<ServerDetailsCardProps> = ({
         </div>
         <div className="col-span-1 flex-grow rounded-md border p-4 bg-slate-200">
           <div className="flex justify-center mb-3">
-            <h4 className="font-semibold sm:text-xl lg:text-2xl">Services</h4>
+            <h4 className="font-semibold sm:text-xl lg:text-2xl text-lg">
+              Services
+            </h4>
           </div>
           <ul>
             <li>
@@ -67,7 +63,9 @@ const ServerDetailsCard: React.FC<ServerDetailsCardProps> = ({
         </div>
         <div className="col-span-1 flex-grow rounded-md border p-4 bg-slate-200">
           <div className="flex justify-center mb-3">
-            <h4 className="font-semibold sm:text-xl lg:text-2xl">Stats</h4>
+            <h4 className="font-semibold sm:text-xl lg:text-2xl text-lg">
+              Stats
+            </h4>
           </div>
           <ul>
             <li>
@@ -92,13 +90,18 @@ const ServerDetailsCard: React.FC<ServerDetailsCardProps> = ({
         </div>
         <div className="col-span-1 sm:col-span-3 flex-grow rounded-md border p-4 bg-slate-200">
           <div className="flex justify-center mb-3">
-            <h4 className="font-semibold sm:text-xl lg:text-2xl">Workers</h4>
+            <h4 className="font-semibold sm:text-xl lg:text-2xl text-lg">
+              Workers
+            </h4>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {server.workers.map((workerTuple, idx) => {
               const [name, worker] = workerTuple; // Destructure the tuple
               return (
-                <div key={idx} className="flex-grow rounded-md border border-white-100 p-4">
+                <div
+                  key={idx}
+                  className="flex-grow rounded-md border border-white-100 p-4"
+                >
                   <div className="flex justify-center mb-3">
                     <h4 className="font-medium uppercase text-center lg:text-xl">
                       {name}
