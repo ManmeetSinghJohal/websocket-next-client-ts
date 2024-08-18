@@ -6,7 +6,9 @@ import useWebSocket from "react-use-websocket";
 import { RingLoader } from "react-spinners";
 
 const ServerDetails = ({ params }: { params: { serverId: string } }) => {
-  const WS_URL = "ws://127.0.0.1:8000";
+  const WS_URL: string =
+    process.env.WS_URL || "wss://websocket-server-mj.onrender.com";
+
   const { lastJsonMessage } = useWebSocket(WS_URL);
 
   // Loading state
