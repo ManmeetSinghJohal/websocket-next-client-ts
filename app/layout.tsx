@@ -18,8 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main>
-          <div className="text-center pt-8 pb-10 bg-white-300">
-            <h1 className="text-2xl sm:text-4xl ">Server Status Monitor</h1>
+          <div className="text-center pt-8 sm:pb-10 sm:pt-20 bg-white-300">
+            <h1 className="text-2xl sm:text-4xl font-bold">Server Status Monitor</h1>
           </div>
           {children}
         </main>
