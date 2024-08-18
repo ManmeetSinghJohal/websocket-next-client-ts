@@ -41,3 +41,29 @@ export type ServerData = {
   strict: boolean;
   server_issue: string | null;
 };
+
+export type ServerDetailsCardProps = {
+  title: string;
+  region: string;
+  status: string;
+  roles: string[];
+  strict: boolean;
+  serverIssue?: string | null;
+  services: Services;
+  stats: Stats;
+};
+
+export type ServerCardsContainerProps = {
+  data: EndpointData[];
+};
+
+export type ServerCardProps = {
+  title: string;
+  region: string;
+  status: string;
+  roles: string[];
+  strict: boolean;
+  serverIssue?: string | null;
+  services: Services;
+  stats: Stats;
+};
