@@ -38,8 +38,8 @@ const ServerDetails = ({ params }: { params: { serverId: string } }) => {
   }
 
   return (
-    <div className="bg-white-300 ">
-      <div className="mx-auto max-w-[1440px] py-12">
+    <div className="bg-white-300">
+      <div className="mx-auto max-w-[1440px] pb-10 pt-12">
         <ServerDetailsCard
           title={`${(serverData.data.region || "").toUpperCase()}`}
           region={serverData.data.region}
