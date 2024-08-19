@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 // Import the defined types
 import { ServerCardProps } from "@/types/types";
-
+import CircularProgressBar from "./CircularProgressBar";
 
 const ServerCard: React.FC<ServerCardProps> = ({
   title,
@@ -18,13 +18,16 @@ const ServerCard: React.FC<ServerCardProps> = ({
 }) => {
   const { server } = stats;
 
+  // Determine the text color based on status
+  const statusFontColor = status === "ok" ? "text-lime-500" : "text-red-500";
+
   return (
-    <div className="bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 p-4 sm:p-6 rounded-[10px] border">
+    <div className="bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 p-4 sm:p-6 rounded-[10px] border shadow-2xl">
       <div className="flex justify-center mb-6">
         <h3 className="font-bold sm:text-2xl">{title}</h3>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="flex-grow rounded-md border p-4 bg-slate-200">
+        <div className="flex-grow rounded-md border p-4 bg-slate-200 shadow-xl">
           <div className="flex justify-center mb-3">
             <h4 className="font-semibold sm:text-xl text-lg">Server</h4>
           </div>
@@ -32,7 +35,8 @@ const ServerCard: React.FC<ServerCardProps> = ({
             <strong>Region:</strong> {region}
           </p>
           <p>
-            <strong>Status:</strong> {status}
+            <strong>Status:</strong>
+            <span className={`${statusFontColor} font-bold`}> {status}</span>
           </p>
           <p>
             <strong>Roles:</strong> {roles.join(", ")}
@@ -44,7 +48,7 @@ const ServerCard: React.FC<ServerCardProps> = ({
             <strong>Server Issue:</strong> {serverIssue || "None"}
           </p>
         </div>
-        <div className="flex-grow rounded-md border p-4 bg-slate-200">
+        <div className="flex-grow rounded-md border p-4 bg-slate-200 shadow-xl">
           <div className="flex justify-center mb-3">
             <h4 className="font-semibold sm:text-xl text-lg">Services</h4>
           </div>
@@ -58,7 +62,7 @@ const ServerCard: React.FC<ServerCardProps> = ({
             </li>
           </ul>
         </div>
-        <div className="col-span-1 sm:col-span-2 flex-grow rounded-md border p-4 bg-slate-200">
+        <div className="flex-grow rounded-md border p-4 bg-slate-200 shadow-xl">
           <div className="flex justify-center mb-3">
             <h4 className="font-semibold sm:text-xl text-lg">Stats</h4>
           </div>
@@ -83,6 +87,15 @@ const ServerCard: React.FC<ServerCardProps> = ({
             </li>
           </ul>
         </div>
+        <div className="flex-grow rounded-md border p-4 bg-slate-200 flex flex-col items-center shadow-xl">
+          <div className="flex justify-center mb-3">
+            <h4 className="font-semibold sm:text-xl text-lg">CPU Load</h4>
+          </div>
+          <div className="flex-grow flex items-center justify-center mt-4 sm:mt-0">
+            <CircularProgressBar progress={server.cpu_load} />
+          </div>
+        </div>
+
         <div className="col-span-1 sm:col-span-2">
           <Link href={`/${region}`}>
             <Button variant="outline">More Info</Button>
