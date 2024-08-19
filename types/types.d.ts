@@ -67,3 +67,9 @@ export type ServerCardProps = {
   services: Services;
   stats: Stats;
 };
+
+export type SocialLinks = {
+  src: string;
+  alt: string;
+  url: string;
+};
